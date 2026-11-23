@@ -42,7 +42,7 @@ try
             }, PatchCatalog.Json));
             return 0;
         case "create" when args.Length >= 5:
-            var package = await new PatchPackageBuilder(inspector, codec).BuildAsync(args[1], args[2], args[3], args[4], args.Length > 5 ? args[5] : "Candidata beta; collaudo del gioco incompleto.", progress, stop.Token);
+            var package = await new PatchPackageBuilder(inspector, codec).BuildAsync(args[1], args[2], args[3], args[4], args.Length > 5 ? args[5] : "Traduzione italiana beta.", progress, stop.Token);
             Console.WriteLine(JsonSerializer.Serialize(package, PatchCatalog.Json));
             return 0;
         default:

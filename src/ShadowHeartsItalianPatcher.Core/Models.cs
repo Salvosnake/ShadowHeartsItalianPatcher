@@ -30,7 +30,7 @@ public sealed record PatchManifest
         get; init;
     }
     public string MinimumPatcherVersion { get; init; } = "1.0.0";
-    public string Compatibility { get; init; } = "Candidata beta: collaudo completo non concluso.";
+    public string Compatibility { get; init; } = "Traduzione italiana beta.";
     public string DistributionReview { get; init; } = "Richiesta: contiene differenze binarie derivate dal gioco. Non pubblicata.";
 }
 public sealed record PatchPackage(PatchManifest Manifest, string Directory);

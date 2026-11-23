@@ -111,7 +111,7 @@
                 FontSize="12"/>
             <TextBlock
                 Grid.Row="6"
-                Text="Traduzioni candidate al beta testing. Le patch sono offline e aggiornabili separatamente dall’applicazione."
+                Text="Traduzione italiana beta. Le patch sono offline e aggiornabili separatamente dall’applicazione."
                 Opacity="0.6"
                 TextWrapping="Wrap"
                 FontSize="12"/>

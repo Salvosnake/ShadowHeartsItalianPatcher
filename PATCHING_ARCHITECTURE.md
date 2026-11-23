@@ -2,7 +2,7 @@
 
 ## Metodo
 
-L'applicazione usa un delta binario tra una ISO originale esatta e una ISO italiana di riferimento. Questo evita di duplicare nel patcher i parser, i repacker e gli strumenti di masterizzazione della traduzione. Il risultato conserva esattamente i byte, gli offset e il layout della candidata di riferimento.
+L'applicazione usa un delta binario tra una ISO originale esatta e una ISO italiana di riferimento. Questo evita di duplicare nel patcher i parser, i repacker e gli strumenti di masterizzazione della traduzione. Il risultato conserva esattamente i byte, gli offset e il layout della ISO italiana di riferimento.
 
 Il formato gestito SHID usa Brotli del runtime .NET e non richiede eseguibili esterni. Non è compatibile con xdelta/VCDIFF. Una ricostruzione strutturata richiederebbe mantenere una seconda implementazione dei formati PS2; una libreria delta alternativa può essere aggiunta tramite `IDeltaCodec` con una nuova versione di algoritmo.
 
@@ -17,7 +17,7 @@ L'header contiene 8 byte ASCII `SHID0001`, seguiti dalla dimensione finale come 
 | 2 | Lunghezza Int64 e byte | Inserisce un letterale, massimo 4 MiB |
 | 3 | Lunghezza Int64 | Scrive zeri |
 
-Il generatore indicizza blocchi da 2048 byte tramite una chiave di 128 bit derivata da SHA-256 e confronta byte per byte ogni candidato COPY. Accorpa copie contigue e sequenze di zeri. L'indice è limitato a quattro milioni di blocchi; il decoder usa offset a 64 bit e un buffer da 1 MiB senza costruire tale indice.
+Il generatore indicizza blocchi da 2048 byte tramite una chiave di 128 bit derivata da SHA-256 e confronta byte per byte ogni blocco individuato per COPY. Accorpa copie contigue e sequenze di zeri. L'indice è limitato a quattro milioni di blocchi; il decoder usa offset a 64 bit e un buffer da 1 MiB senza costruire tale indice.
 
 ## Verifiche e transazione
 
