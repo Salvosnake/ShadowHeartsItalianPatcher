@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="../ShadowHeartsItalianPatcher.Core/ShadowHeartsItalianPatcher.Core.csproj"/>
+        <ProjectReference Include="../ShadowHeartsItalianPatcher.Infrastructure/ShadowHeartsItalianPatcher.Infrastructure.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="12.1.6"/>
+        <PackageReference Include="Avalonia.Desktop" Version="12.1.6"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.6"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="../../Patches/**/*" Exclude="../../Patches/**/generation-report.json">
+            <Link>Patches/%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+        </Content>
+    </ItemGroup>
+</Project>

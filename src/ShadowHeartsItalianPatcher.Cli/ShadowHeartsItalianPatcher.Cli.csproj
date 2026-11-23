@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="../ShadowHeartsItalianPatcher.Core/ShadowHeartsItalianPatcher.Core.csproj"/>
+        <ProjectReference Include="../ShadowHeartsItalianPatcher.Infrastructure/ShadowHeartsItalianPatcher.Infrastructure.csproj"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="../../Patches/**/*" Exclude="../../Patches/**/generation-report.json">
+            <Link>Patches/%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+        </Content>
+    </ItemGroup>
+</Project>

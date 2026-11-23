@@ -1,0 +1,41 @@
+# Documentazione interna, checkpoint e dati locali
+/private/
+/RESUME.md
+/local/
+/artifacts/
+
+# Pacchetti locali: esclusi anche manifest e report
+/Patches/*
+!/Patches/README.md
+*.shid
+*.building-*/
+
+# Build, test e IDE
+**/bin/
+**/obj/
+**/TestResults/
+.vs/
+.idea/
+*.user
+*.suo
+
+# Immagini e risorse proprietarie
+*.iso
+*.ISO
+*.ps2
+*.bios
+*.bin
+*.BIN
+*.pkb
+*.PKB
+*.elf
+*.ELF
+*.partial
+
+# Configurazioni e credenziali locali
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key

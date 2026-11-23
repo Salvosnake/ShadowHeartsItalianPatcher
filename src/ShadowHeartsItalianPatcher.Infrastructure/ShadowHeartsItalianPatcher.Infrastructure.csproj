@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup/>
+    <ItemGroup>
+        <ProjectReference Include="../ShadowHeartsItalianPatcher.Core/ShadowHeartsItalianPatcher.Core.csproj"/>
+    </ItemGroup>
+</Project>
